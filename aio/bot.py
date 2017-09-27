@@ -1,6 +1,5 @@
 import multiprocessing
 import time
-from aio import utilities
 
 class Bot(object):
     def __init__(self):
@@ -44,9 +43,6 @@ class Bot(object):
         task = self.tasks.pop(task_id, None)
         if task and task.is_active():
             self.stop_task(task)
-
-    def run_until_complete(self, target=None, args=(), logger=None, interval=0.01):
-        return utilities.run_until_complete(target=target, args=args, logger=logger, interval=interval)
 
     @staticmethod
     def wait_until_time(timestamp):
