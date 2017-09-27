@@ -45,8 +45,8 @@ class Bot(object):
         if task and task.is_active():
             self.stop_task(task)
 
-    def run_until_complete(self, target=None, args=(), logger=None):
-        return utilities.run_until_complete(target=target, args=args, logger=logger)
+    def run_until_complete(self, target=None, args=(), logger=None, interval=0.01):
+        return utilities.run_until_complete(target=target, args=args, logger=logger, interval=interval)
 
     @staticmethod
     def wait_until_time(timestamp):

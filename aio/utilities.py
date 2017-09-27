@@ -32,3 +32,10 @@ def run_until_complete(target=None, args=(), logger=None, interval=0.01):
                 logger.error(error)
         time.sleep(interval) # Avoid busy waiting
     return result
+
+class Runner(object):
+    def __init__(self, logger=None):
+        self.logger = logger
+
+    def run_until_complete(self, target=None, args=(), interval=0.01):
+        run_until_complete(target=target, args=args, logger=self.logger, interval=interval)
