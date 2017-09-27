@@ -8,6 +8,12 @@ This project was created to aid the development of website bots and API wrappers
 
 ## Basic Usage
 
+This module is available via pip:
+
+```
+$ pip install aio-framework
+```
+
 Basic `ApiWrapper` and `Bot` implementations are shown below. `Bot` implementations *must* implement the `execute_task` method.
 
 ### ApiWrapper
