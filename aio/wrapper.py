@@ -25,7 +25,7 @@ class ApiWrapper(object):
         return endpoint if is_full_url else self.BASE_URL + str(endpoint)
 
     def request(self, method, url, **kwargs):
-        return self.session.request(method=method, url=self.make_url(url), **kwargs)
+        return self.session.request(method=method, url=self.make_url(url), proxies=self.get_random_proxy(), **kwargs)
 
     def get(self, url, **kwargs):
         return self.request('get', url, **kwargs)
